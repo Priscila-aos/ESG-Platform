@@ -7,7 +7,7 @@ const App = () => {
   return (
   <>
     <RoutesApp />
-    <GlobalStyle/>
+    <GlobalStyle />
   </>
   )
 }
