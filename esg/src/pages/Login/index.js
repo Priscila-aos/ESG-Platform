@@ -3,7 +3,7 @@ import * as s  from './style';
 import Input from '../../components/Input';
 import Button from '../../components/Button'; 
 import useAuth from '../../hooks/useAuth';
-import { Link, link, useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const Signin = () => {
 
@@ -36,7 +36,25 @@ const Signin = () => {
                     onChange={(e) => [
                         setEmail(e.target.value,setErro(''))
                     ]}
+                />       
+
+                <Input
+                    Type='senha' PlaceHolder='Digite sua senha' Value={senha}
+                    onChange={(e) => [
+                        setSenha(e.target.value,setErro(''))
+                    ]}
                 />        
+
+                <s.LabelError>{erro}</s.LabelError>
+                <Button Text='Entrar' onClick={handleLogin}/>
+                <s.LabelSignup> 
+                    Ainda não possui uma conta ?
+                    <s.Strong>
+                        <Link to='/signup'> &nbsp; Clique aqui </Link>
+                    </s.Strong> 
+                </s.LabelSignup>
+                
+
             </s.Content>      
         </s.Container>
 
