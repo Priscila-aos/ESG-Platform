@@ -8,7 +8,7 @@ export const Container = styled.div`
     flex-direction: column;
     gap: 20px;
     height: 100vh;
-    background: linear-gradient(to right, #BFD9D6, #ffffff);
+    background: linear-gradient(to right, #D7D7D9, #ffffff);
 `;
 
 
