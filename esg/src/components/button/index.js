@@ -3,12 +3,13 @@ import * as s from './style'
 
 
 
-const Button = ({Text, onClick, Type='button'}) => {
+const Button = ({text, onClick, type='button'}) => {
   return (
-    <s.Button type = {Type} onClick={onClick}>
-        {Text}
+    <s.Button type = {type} onClick={onClick}>
+        {text}
     </s.Button>
   )
 }
 
 export default Button;
+

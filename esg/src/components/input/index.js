@@ -1,9 +1,9 @@
 import React from 'react'
 import * as s from './style'
 
-const Input = ({Type, PlaceHolder, Value, onChange}) => {
+const Input = ({type, placeHolder, value, onChange}) => {
   return (
-    <s.Input type={Type} placeholder={PlaceHolder} value={Value} onChange={onChange}/>
+    <s.Input type={type} placeholder={placeHolder} value={value} onChange={onChange}/>
       
   )
 }
