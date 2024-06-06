@@ -5,6 +5,9 @@ import Home from '../pages/Home';
 import Signin from '../pages/Login';
 import Signup from '../pages/Cadastro';
 import useAuth from '../hooks/useAuth'
+import Atividades from '../pages/Atividades'
+import Contato from '../pages/Contato'
+import Pontos from '../pages/Pontos'
 
 const Private = ({Item}) => {
     const signed = useAuth;
@@ -20,6 +23,9 @@ const RoutesApp = () => {
                     <Route path='/' element={<Signin />} />
                     <Route exact path='/signup' element={<Signup />} />
                     <Route path='*' element={<Signin />} />
+                    <Route exact path='/atividades' element={<Atividades/>}/>
+                    <Route exact path='/contato' element={<Contato/>}/>
+                    <Route exact path='/pontos' element={<Pontos/>}/>
                 </Routes>
             </Fragment>
         </BrowserRouter>

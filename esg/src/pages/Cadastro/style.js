@@ -30,7 +30,6 @@ export const Content = styled.div`
     }
 `;
 
-
 export const Label = styled.label`
     font-size: 18px;
     font-weight: 600;
@@ -38,20 +37,17 @@ export const Label = styled.label`
     text-align: center;
 `;
 
-
 export const LabelSignin = styled.label`
     font-size: 14px;
     color: #333;
     text-align: center;
 `;
 
-
 export const LabelErro = styled.label`
     font-size: 14px;
     color: #e74c3c;
     text-align: center;
 `;
-
 
 export const Strong = styled.strong`
     cursor: pointer;

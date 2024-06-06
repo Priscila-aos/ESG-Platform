@@ -1,64 +1,103 @@
-import React, {useState} from 'react';
-import * as s  from './style';
-import Input from '../../components/Input';
-import Button from '../../components/Button'; 
-import useAuth from '../../hooks/useAuth';
-import { Link, useNavigate } from 'react-router-dom';
+import React, { useState } from 'react'
+import * as s from '../pages_style'
+import Input from '../../components/Input'
+import Button from '../../components/Button'
+import useAuth from '../../hooks/useAuth'
+import { Link, useNavigate } from 'react-router-dom'
+import { FaEye, FaEyeSlash } from 'react-icons/fa';
+import img from '../../img/logo_.jpg'
+
 
 const Signin = () => {
 
-    const {signin}=useAuth()
+
+    const { signin } = useAuth()
     const navigate = useNavigate()
 
-    const [email,setEmail]=useState('')
-    const [senha,setSenha]=useState('')
-    const [erro, setErro]=useState('')
 
-    const handleLogin =() => {
-        if (!email|!senha) {
-            setErro('Preencha todos os campos')
-            return  
-        } 
-        const resp=signin(email,senha)
-        if(resp) {
-            setErro(resp)
-            return 
+    const [email, setEmail] = useState('')
+    const [senha, setSenha] = useState('')
+    const [error, setError] = useState('')
+    const [emailValido, setEmailValido] = useState(true)
+    const [showPass, setShowPass] = useState(false)
+
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+
+    const handleLogin = () => {
+        if (!email || !senha) {
+            setError('Preencha todos os campos.')
+            return
         }
-        navigate('/home')
+
+        const res = signin(email, senha)
+        if (res) {
+            setError(res)
+            return
+        }
+
+        navigate("/home")
     }
 
-    return(
+
+    const toggleShowPassword = () => {
+        setShowPass(!showPass)
+    }
+
+
+    return (
         <s.Container>
-            <s.Label> Faça seu login </s.Label>     
+            <s.img src= {img} />
             <s.Content>
+                <s.Label>Conecte-se aqui ↓</s.Label>
                 <Input
-                    Type='email' PlaceHolder='Digite seu e-mail aqui' Value={email}
-                    onChange={(e) => [
-                        setEmail(e.target.value,setErro(''))
-                    ]}
-                />       
+                    type='email' placeholder='Digite seu email'
+                    value={email}
+                    onChange={(e) => {
+                        const value = e.target.value;
+                        setEmail(value);
+                        setEmailValido(emailRegex.test(value));
+                        setError('');
+                    }}
+                />
+                {!emailValido && <s.LabelError>Email inválido!</s.LabelError>}
 
-                <Input
-                    Type='senha' PlaceHolder='Digite sua senha' Value={senha}
-                    onChange={(e) => [
-                        setSenha(e.target.value,setErro(''))
-                    ]}
-                />        
 
-                <s.LabelError>{erro}</s.LabelError>
-                <Button Text='Entrar' onClick={handleLogin}/>
-                <s.LabelSignup> 
-                    Ainda não possui uma conta ?
+                <s.DivSenha>
+                    <Input
+                        type={showPass ? 'text' : 'password'}
+                        placeholder='Digite sua senha'
+                        value={senha}
+                        onChange={(e) => {
+                            setSenha(e.target.value);
+                            setError('');
+                        }}
+                    />
+                    <s.SpanSenha
+                        onClick={toggleShowPassword}
+                    >
+                        {showPass ? <FaEyeSlash /> : <FaEye />}
+                    </ s.SpanSenha>
+                </s.DivSenha>
+               
+                {error && <s.LabelError>{error}</s.LabelError>}
+                <Button Text='Conectar' onClick={handleLogin} />
+               
+                <s.LabelSignup>
+                    Ainda não tem uma conta?
                     <s.Strong>
-                        <Link to='/signup'> &nbsp; Clique aqui </Link>
-                    </s.Strong> 
+                        <Link to='/signup'>&nbsp; Registre-se!</Link>
+                    </s.Strong>
                 </s.LabelSignup>
-                
-
-            </s.Content>      
+            </s.Content>
         </s.Container>
-
     )
-
 }
-export default Signin;
+
+
+export default Signin
+
+
+
+
