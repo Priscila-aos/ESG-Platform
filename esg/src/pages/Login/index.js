@@ -5,15 +5,12 @@ import Button from '../../components/Button'
 import useAuth from '../../hooks/useAuth'
 import { Link, useNavigate } from 'react-router-dom'
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
-import img from '../../img/logo_.jpg'
-
+import img from '../../img/logo.png'
 
 const Signin = () => {
 
-
     const { signin } = useAuth()
     const navigate = useNavigate()
-
 
     const [email, setEmail] = useState('')
     const [senha, setSenha] = useState('')
@@ -21,9 +18,7 @@ const Signin = () => {
     const [emailValido, setEmailValido] = useState(true)
     const [showPass, setShowPass] = useState(false)
 
-
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
 
     const handleLogin = () => {
         if (!email || !senha) {
@@ -40,11 +35,9 @@ const Signin = () => {
         navigate("/home")
     }
 
-
     const toggleShowPassword = () => {
         setShowPass(!showPass)
     }
-
 
     return (
         <s.Container>
@@ -62,7 +55,6 @@ const Signin = () => {
                     }}
                 />
                 {!emailValido && <s.LabelError>Email inválido!</s.LabelError>}
-
 
                 <s.DivSenha>
                     <Input
@@ -82,7 +74,7 @@ const Signin = () => {
                 </s.DivSenha>
                
                 {error && <s.LabelError>{error}</s.LabelError>}
-                <Button Text='Conectar' onClick={handleLogin} />
+                <Button text='Conectar' onClick={handleLogin} />
                
                 <s.LabelSignup>
                     Ainda não tem uma conta?

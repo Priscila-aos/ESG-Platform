@@ -1,6 +1,6 @@
 
 import styled from 'styled-components'
-import background from '../img/bg_.jpg'
+// import background from '../img/bg_.jpg' (background: url(${background}) no-repeat center center fixed;)
 
 export const Container = styled.div`
   display: flex;
@@ -8,7 +8,7 @@ export const Container = styled.div`
   align-items: center;
   height: 100vh;
   width: 100vw;
-  background: url(${background}) no-repeat center center fixed;
+  
   background-size: cover;
   margin: 0;
   padding: 0;
@@ -22,7 +22,7 @@ export const Content = styled.div`
     flex-direction: column;
     gap: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    background: rgba(60,179,113,0.8);
+    background: rgba(190, 196, 194,0.4);
     width: 100%;
     max-width: 400px;
     padding: 20px;
@@ -35,19 +35,18 @@ export const Content = styled.div`
     }
 `;
 
-
 export const Label = styled.label`
     font-size: 18px;
     font-weight: 600;
-    color: #555;
+    color: #1D4E59;
+    font-family: Ubuntu;
 `;
-
 
 export const LabelSignup = styled.label`
     font-size: 14px;
-    color: #333;
+    color: black;
+    
 `;
-
 
 export const LabelError = styled.label`
     font-size: 14px;
@@ -55,16 +54,13 @@ export const LabelError = styled.label`
     color: #e74c3c;
 `;
 
-
 export const Strong = styled.strong`
     cursor: pointer;
 
-
     a {
         text-decoration: none;
-        color: #173D00;
+        color: #0000FF;
         transition: color 0.3s ease;
-
 
         &:hover {
             color: black;
@@ -72,11 +68,9 @@ export const Strong = styled.strong`
     }
 `;
 
-
 export const img = styled.img`
     width: 500px
 `
-
 
 export const LabelSignin = styled.label`
     font-size: 14px;
@@ -84,19 +78,17 @@ export const LabelSignin = styled.label`
     text-align: center;
 `;
 
-
 export const SpanSenha = styled.span`
     position: absolute;
-    right: 8px;
+    right: 19px;
     top: 50%;
     transform: translateY(-50%);
     cursor: pointer;
 `;
 
-
 export const DivSenha = styled.div`
     position: relative;
-    width: 88%;
+    width: 83%;
 `;
 
 

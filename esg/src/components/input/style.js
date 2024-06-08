@@ -8,4 +8,4 @@ export const Input = styled.input
     border-radius: 5px;
     font-size: 15px;
     background-color: #f0f2f5;
-    border: none;`
+    border: 1px solid rgba(190, 196, 194,0.5);`

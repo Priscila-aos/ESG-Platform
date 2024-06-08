@@ -5,7 +5,7 @@ import Button from '../../components/Button'
 import useAuth from '../../hooks/useAuth'
 import { Link, useNavigate } from 'react-router-dom'
 import { FaEye, FaEyeSlash } from 'react-icons/fa'
-import img from '../../img/logo_.jpg'
+import img from '../../img/logo.png'
 
 
 const Signup = () => {
@@ -112,7 +112,7 @@ const Signup = () => {
                 {error && <s.LabelError>{error}</s.LabelError>}
 
 
-                <Button Text='Inscreva-se' onClick={handleSignup}/>
+                <Button text='Inscreva-se' onClick={handleSignup}/>
 
 
                 <s.LabelSignin>
