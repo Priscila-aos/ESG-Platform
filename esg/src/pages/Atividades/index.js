@@ -39,7 +39,7 @@ const Activities = () => {
         ))}
       </s.CardList>
     </s.Container>
-    <Footer />  {/* Adicionado o Footer, caso seja necessário */}
+    <Footer />  
   </>
   )
 }
