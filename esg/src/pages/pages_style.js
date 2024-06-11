@@ -22,7 +22,7 @@ export const Content = styled.div`
     flex-direction: column;
     gap: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    background: rgba(190, 196, 194,0.4);
+    background: rgba(190, 196, 194,0.3);
     width: 100%;
     max-width: 400px;
     padding: 20px;

@@ -26,7 +26,7 @@ const Footer = () => {
                 <FaLinkedin />
             </a>
            
-            <a  href="https://www.linkedin.com"
+            <a  href="https://www.github.com"
                 target="_blank"
                 rel="noopener noreferrer">
                 <FaGithub />
@@ -35,7 +35,7 @@ const Footer = () => {
 
 
         <s.DeveloperInfo>
-            Desenvolvido por Leonardo Alves | Ebony SyS&copy;
+             Todos os diretos reservados &&copy FIAP;
         </s.DeveloperInfo>
     </s.Container>
   )

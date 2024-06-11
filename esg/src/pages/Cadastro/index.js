@@ -43,7 +43,7 @@ const Signup = () => {
 
 
         else if (email !== emailConf) {
-            setError('Emails não são iguais!');
+            setError('Os e-mails não são iguais!');
             return;
         }
 

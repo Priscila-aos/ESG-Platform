@@ -45,7 +45,8 @@ const Signin = () => {
             <s.Content>
                 <s.Label>Conecte-se aqui ↓</s.Label>
                 <Input
-                    type='email' placeholder='Digite seu email'
+                    type='email' 
+                    placeholder='Digite seu email'
                     value={email}
                     onChange={(e) => {
                         const value = e.target.value;
@@ -87,9 +88,4 @@ const Signin = () => {
     )
 }
 
-
 export default Signin
-
-
-
-

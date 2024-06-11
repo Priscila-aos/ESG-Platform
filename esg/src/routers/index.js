@@ -1,18 +1,19 @@
-import { Fragment } from 'react';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { Fragment } from "react";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 
+import useAuth from "../hooks/useAuth";
 import Home from '../pages/Home';
 import Signin from '../pages/Login';
 import Signup from '../pages/Cadastro';
-import useAuth from '../hooks/useAuth'
-import Atividades from '../pages/Atividades'
-import Contato from '../pages/Contato'
-import Pontos from '../pages/Pontos'
+import Atividades from '../pages/Atividades';
+import Contato from '../pages/Contato';
+import Pontos from '../pages/Pontos';
+
 
 const Private = ({Item}) => {
-    const signed = useAuth;
+    const {signed} = useAuth();
     return signed > 0 ? <Item /> : <Signin />
-}
+};
 
 const RoutesApp = () => {
     return (

@@ -5,9 +5,9 @@ const Header = () => {
   return (
     <s.Container>
             <s.ListMenu to="/home">Página Inicial</s.ListMenu>
-            <s.ListMenu to="/activities">Atividades</s.ListMenu>
-            <s.ListMenu to="/mypoints">Meus Pontos</s.ListMenu>
-            <s.ListMenu to="/talktome">Fale Comigo</s.ListMenu>
+            <s.ListMenu to="/atividades">Atividades</s.ListMenu>
+            <s.ListMenu to="/pontos">Meus Pontos</s.ListMenu>
+            <s.ListMenu to="/contato">Contato</s.ListMenu>
     </s.Container>
  
  )
