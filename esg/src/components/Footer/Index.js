@@ -35,7 +35,7 @@ const Footer = () => {
 
 
         <s.DeveloperInfo>
-             Todos os diretos reservados &&copy FIAP;
+           Todos os diretos reservados &copy; |2024;
         </s.DeveloperInfo>
     </s.Container>
   )

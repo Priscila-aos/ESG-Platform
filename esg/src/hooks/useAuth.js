@@ -9,3 +9,5 @@ const useAuth = () => {
 
 export default useAuth
 
+// Ao invés de chamar o contexto em cada página, 
+// criando o hook, basta chamar o useAuth no app.js

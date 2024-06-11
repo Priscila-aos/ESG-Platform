@@ -8,10 +8,12 @@ import Signup from '../pages/Cadastro';
 import Atividades from '../pages/Atividades';
 import Contato from '../pages/Contato';
 import Pontos from '../pages/Pontos';
+import CreateActivities from "../pages/CriarAtividade";
 
 
 const Private = ({Item}) => {
     const {signed} = useAuth();
+
     return signed > 0 ? <Item /> : <Signin />
 };
 
@@ -25,6 +27,7 @@ const RoutesApp = () => {
                     <Route exact path='/signup' element={<Signup />} />
                     <Route path='*' element={<Signin />} />
                     <Route exact path='/atividades' element={<Atividades/>}/>
+                    <Route exact path='/createactivities' element={<CreateActivities />} />
                     <Route exact path='/contato' element={<Contato/>}/>
                     <Route exact path='/pontos' element={<Pontos/>}/>
                 </Routes>

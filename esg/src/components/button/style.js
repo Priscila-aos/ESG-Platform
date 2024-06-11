@@ -1,6 +1,6 @@
-import Styled from "styled-components";
+import styled from "styled-components";
 
-export const Button = Styled.button`
+export const Button = styled.button`
     padding: 10px 20px;
     outline: none;
     border: none;
@@ -15,10 +15,10 @@ export const Button = Styled.button`
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease;
 
-
     &:hover {
         background-color: rgba(4, 110, 229, 1);
         box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+        color: black;
     }
 
 

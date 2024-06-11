@@ -1,6 +1,5 @@
 
 import styled from 'styled-components'
-// import background from '../img/bg_.jpg' (background: url(${background}) no-repeat center center fixed;)
 
 export const Container = styled.div`
   display: flex;
@@ -8,7 +7,6 @@ export const Container = styled.div`
   align-items: center;
   height: 100vh;
   width: 100vw;
-  
   background-size: cover;
   margin: 0;
   padding: 0;
@@ -44,8 +42,7 @@ export const Label = styled.label`
 
 export const LabelSignup = styled.label`
     font-size: 14px;
-    color: black;
-    
+    color: black;    
 `;
 
 export const LabelError = styled.label`
@@ -91,4 +88,8 @@ export const DivSenha = styled.div`
     width: 83%;
 `;
 
-
+export const CardList = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+`

@@ -7,7 +7,6 @@ import { Link, useNavigate } from 'react-router-dom'
 import { FaEye, FaEyeSlash } from 'react-icons/fa'
 import img from '../../img/logo.png'
 
-
 const Signup = () => {
    
     const [email, setEmail] = useState('')
@@ -17,13 +16,10 @@ const Signup = () => {
     const [emailValido, setEmailValido] = useState(true)
     const [showPass, setShowPass] = useState(false)
 
-
     const navigate = useNavigate()
     const { signup } = useAuth()
 
-
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
-
 
     const handleEmailChange = (e) => {
         const value = e.target.value;
@@ -32,40 +28,32 @@ const Signup = () => {
         setError('');
     }
 
-
     const handleSignup = () => {
-
 
         if (!email | !emailConf | !senha) {
             setError('Preencha todos os campos');
             return;
         }
 
-
         else if (email !== emailConf) {
             setError('Os e-mails não são iguais!');
             return;
         }
 
-
         const res = signup(email, senha);
-
 
         if (res) {
             setError(res);
             return;
         }
 
-
         alert('Usuário cadastrado com sucesso!');
         navigate('/');
     }
 
-
     const toggleShowPassword = () => {
         setShowPass(!showPass)
     }
-
 
     return (
         <s.Container>
@@ -78,8 +66,7 @@ const Signup = () => {
                     value={email}
                     onChange={handleEmailChange}
                 />
-                {!emailValido && <s.LabelError>Email inválido!</s.LabelError>}
-
+                {!emailValido && <s.LabelError>E-mail inválido!</s.LabelError>}
 
                 <Input
                     type='email'
@@ -90,7 +77,6 @@ const Signup = () => {
                         setError('');
                     }}
                 />
-
 
                 <s.DivSenha>
                     <Input
@@ -111,9 +97,7 @@ const Signup = () => {
                
                 {error && <s.LabelError>{error}</s.LabelError>}
 
-
                 <Button text='Inscreva-se' onClick={handleSignup}/>
-
 
                 <s.LabelSignin>
                     Já tem uma conta?
@@ -125,7 +109,6 @@ const Signup = () => {
         </s.Container>
     )
 }
-
 
 export default Signup
 

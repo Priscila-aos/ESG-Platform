@@ -1,6 +1,5 @@
 import { Children, createContext, useEffect, useState } from 'react'
 import { json } from 'react-router-dom'
-
 export const AuthContext = createContext({})
 
 export const AuthProvider = ({ children }) => {
