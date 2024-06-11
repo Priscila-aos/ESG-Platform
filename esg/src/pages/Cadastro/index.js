@@ -97,7 +97,7 @@ const Signup = () => {
                
                 {error && <s.LabelError>{error}</s.LabelError>}
 
-                <Button text='Inscreva-se' onClick={handleSignup}/>
+                <Button Text='Inscreva-se' onClick={handleSignup}/>
 
                 <s.LabelSignin>
                     Já tem uma conta?

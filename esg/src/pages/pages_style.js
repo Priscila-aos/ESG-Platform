@@ -88,8 +88,64 @@ export const DivSenha = styled.div`
     width: 83%;
 `;
 
-export const CardList = styled.div`
+export const CardContainer = styled.div`
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
-`
+  padding: 20px;
+  background-color: #f9f9f9;
+`;
+
+export const CardList = styled.div`
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+  width: 100%;
+  max-width: 1200px;
+`;
+
+export const Title = styled.h1`
+  font-size: 24px;
+  margin-bottom: 20px;
+`;
+
+export const PointsWrapper = styled.div`
+  margin-bottom: 20px;
+`;
+
+export const PointsText = styled.p`
+  font-size: 18px;
+`;
+
+export const TotalPoints = styled.div`
+  font-size: 18px;
+  font-weight: bold;
+  margin-top: 20px;
+`;
+
+export const ClassificacaoContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+`;
+
+export const Podio = styled.div`
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 20px;
+`;
+
+export const OutrasEmpresas = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
+
+export const Empresa = styled.div`
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-weight: ${({ destacado }) => (destacado ? 'bold' : 'normal')};
+  background-color: ${({ destacado }) => (destacado ? 'lightyellow' : 'transparent')};
+`;

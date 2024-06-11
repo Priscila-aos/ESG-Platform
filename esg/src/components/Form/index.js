@@ -30,29 +30,21 @@ export function Form({ title }) {
             return;
         }
 
-        const { categoria } = getValues(); // Obter o valor da categoria selecionada
+        const { categoria } = getValues(); 
         let pontuacao;
 
-        // Calcular a pontuação com base na categoria selecionada
         switch (categoria) {
-            case 'cat_1':
-                pontuacao = 10;
+            case 'ambiental':
+                pontuacao = 50;
                 break;
-            case 'cat_2':
-                pontuacao = 20;
-                break;
-            case 'cat_3':
-                pontuacao = 30;
-                break;
-            case 'cat_4':
+            case 'social':
                 pontuacao = 40;
                 break;
-            default:
-                pontuacao = 0;
+            case 'corporativa':
+                pontuacao = 30;
                 break;
         }
 
-        // Adicionar a pontuação aos dados antes de enviar para a API
         const newData = { ...data, pontuacao, email: user.email };
 
         try {
@@ -66,7 +58,7 @@ export function Form({ title }) {
 
     return (
         <>
-            <Header /> {/* Renderize o componente Header */}
+            <Header /> 
             <s.Container>
                 <s.Content>
                     <s.Strong>{title}</s.Strong>
@@ -98,29 +90,23 @@ export function Form({ title }) {
 
                         <s.RadioGroup>
                             <s.RadioButtonLabel>
-                                <s.RadioButton type="radio" value="cat_1" {...register('categoria', { required: true })} />
+                                <s.RadioButton type="radio" value="ambiental" {...register('categoria', { required: true })} />
                                 <span></span>
                                 Governança ambiental
                             </s.RadioButtonLabel>
 
                             <s.RadioButtonLabel>
-                                <s.RadioButton type="radio" value="cat_2" {...register('categoria', { required: true })} />
+                                <s.RadioButton type="radio" value="social" {...register('categoria', { required: true })} />
                                 <span></span>
                                 Governança social
                             </s.RadioButtonLabel>
 
                             <s.RadioButtonLabel>
-                                <s.RadioButton type="radio" value="cat_3" {...register('categoria', { required: true })} />
+                                <s.RadioButton type="radio" value="corporativa" {...register('categoria', { required: true })} />
                                 <span></span>
                                 Governança corporativa
                             </s.RadioButtonLabel>
 
-                            {/* <s.RadioButtonLabel>
-                                <s.RadioButton type="radio" value="cat_4" {...register('categoria', { required: true })} />
-                                <span></span>
-                                Cat_4
-                            </s.RadioButtonLabel> */}
-                            {errors.titulo && <s.IconError><FaExclamationCircle /></s.IconError>}
                         </s.RadioGroup>
 
                         <Button Text='Salvar' Type="submit" />

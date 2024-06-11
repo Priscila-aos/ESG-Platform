@@ -74,7 +74,7 @@ const Signin = () => {
                 </s.DivSenha>
                
                 {error && <s.LabelError>{error}</s.LabelError>}
-                <Button text='Conectar' onClick={handleLogin} />
+                <Button Text='Conectar' onClick={handleLogin} />
                
                 <s.LabelSignup>
                     Ainda não tem uma conta?

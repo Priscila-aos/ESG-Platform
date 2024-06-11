@@ -7,6 +7,7 @@ export const Container = styled.nav`
     padding: 10px;
     display: flex;
     justify-content: left;
+
 `
 
 export const ListMenu = styled(Link)`
@@ -15,7 +16,12 @@ export const ListMenu = styled(Link)`
     text-decoration: none;
  
 `
-
+export const Strong = styled.strong`
+    cursor: pointer;
+    margin-right: 30px;    
+        
+    
+`;
 
 
 

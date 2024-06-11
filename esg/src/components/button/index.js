@@ -3,15 +3,15 @@ import * as s from './style'
 
 const Button = (
   {
-    text = 'Salvar',
+    Text = '',
     onClick = () => {},
-    type='button'}
+    Type='button'}
   ) => {
   return (
     <s.Button
-     type={type} 
+     type={Type} 
      onClick={onClick}>
-        {text}
+        {Text}
     </s.Button>
   )
 }

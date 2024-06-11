@@ -1,60 +1,55 @@
-// import React from 'react';
-// import * as s from '../pages_style';
-// import Header from '../../components/Header'
-// import Footer from '../../components/Footer'; 
+import React, { useState, useEffect} from 'react'
+import * as s from '../pages_style'
+import { api } from '../../axios/axios'
+import Footer from '../../components/Footer'
+import Card from '../../components/Card'
+import { Link } from 'react-router-dom'
+import Header from '../../components/Header'
+import useAuth from '../../hooks/useAuth'; 
 
-// const Pontos = () => {
-//     return (
-//         <>
-//             <Header /> {/* Renderize o componente Header */}
-//             <div>
-//                 Hanking de pontuação
-//             </div>
-//             <Footer /> {/* Renderize o componente Footer */}
-//         </>
-//     );
-// }
+const Activities = () => {
+  const [posts, setPosts] = useState([]);
+  const [totalPoints, setTotalPoints] = useState(0);
+  const { user } = useAuth(); 
 
-// export default Pontos;
+  useEffect(() => {
+    if (!user) return;
 
-import React from 'react';
-import Header from '../../components/Header';
-import Footer from '../../components/Footer';
-import * as s from '../pages_style'; // Import styled components from the pages_style file
+    // Faz uma requisição à API para obter as postagens pelo email completo do usuário
+    api.get(`/posts?email=${user.email}`)
+      .then((response) => {
+        setPosts(response.data);
 
-const Pontos = () => {
-    return (
-        <>
-            <Header />
-            <s.Container>
-                <s.Content>
-                    <h1 className="text-3xl font-bold text-center mb-8">Hanking de Pontuação</h1>
-                    <s.CardList>
-                        <s.Content>
-                            <s.Label>Você ainda não tem pontos</s.Label>
-                            <h3 className="text-9xl text-gray-950 text-center mb-4">0</h3>
-                            <button className="bg-[#F27E63] hover:bg-[#F27E64] hover:scale-105 active:scale-100 transition-all text-gray-950 font-bold py-2 px-4 rounded">
-                                Entrar ou cadastre-se
-                            </button>
-                        </s.Content>
-                        <s.Content>
-                            <s.Label>Sistema de pontuação</s.Label>
-                            <p className="w-4/5 text-gray-950 text-center mb-4">Ganhe pontos ao participar de atividades ESG e troque por brindes</p>
-                            <button className="bg-[#F27E63] hover:bg-[#F27E64] hover:scale-105 active:scale-100 transition-all text-gray-950 font-bold py-2 px-4 rounded">Veja como funciona</button>
-                        </s.Content>
-                        <s.Content>
-                            <s.Label>Histórias dos participantes do programa</s.Label>
-                            <p className="w-4/5 text-gray-950 text-center mb-4">O nosso programa conta com 1000+ participantes que já estão fazendo a diferença</p>
-                            <button className="bg-[#F27E63] hover:bg-[#F27E64] hover:scale-105 active:scale-100 transition-all text-gray-950 font-bold py-2 px-4 rounded">Veja suas histórias</button>
-                        </s.Content>
-                    </s.CardList>
-                </s.Content>
-            </s.Container>
-            <Footer />
-        </>
-    );
+        // Calcula o total de pontos somando as pontuações de todas as postagens
+        const total = response.data.reduce((acc, post) => acc + post.pontuacao, 0);
+        setTotalPoints(total);
+      })
+      .catch((error) => {
+        console.error('Erro ao obter postagens:', error);
+      });
+  }, [user]); 
+
+  return (
+    <>
+      <Header />
+      <s.TotalPoints>Total de pontos: {totalPoints}</s.TotalPoints>
+      <s.CardContainer>
+        <s.CardList>
+          {posts.map((post) => (
+            <Card
+              key={post.id}
+              email={post.email}
+              categoria={post.categoria}
+              atividade={post.atividade}
+              pontos={post.pontuacao}
+            />
+          ))}
+        </s.CardList>
+      </s.CardContainer>
+      
+      <Footer />  
+    </>
+  )
 }
 
-export default Pontos;
-
-
+export default Activities

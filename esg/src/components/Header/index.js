@@ -4,7 +4,9 @@ import * as s from './style'
 const Header = () => {
   return (
     <s.Container>
+            <s.Strong>Embrace ESG</s.Strong>
             <s.ListMenu to="/home">Página Inicial</s.ListMenu>
+            <s.ListMenu to="/classificacao">Classificação</s.ListMenu>
             <s.ListMenu to="/atividades">Atividades</s.ListMenu>
             <s.ListMenu to="/pontos">Meus Pontos</s.ListMenu>
             <s.ListMenu to="/contato">Entenda o sistema de pontuação</s.ListMenu>
