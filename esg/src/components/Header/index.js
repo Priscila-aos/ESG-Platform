@@ -7,7 +7,7 @@ const Header = () => {
             <s.ListMenu to="/home">Página Inicial</s.ListMenu>
             <s.ListMenu to="/atividades">Atividades</s.ListMenu>
             <s.ListMenu to="/pontos">Meus Pontos</s.ListMenu>
-            <s.ListMenu to="/contato">Contato</s.ListMenu>
+            <s.ListMenu to="/contato">Entenda o sistema de pontuação</s.ListMenu>
     </s.Container>
  
  )
