@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import background from '../../img/bg_.jpg'
+
 
 export const Container = styled.div`
   display: flex;
@@ -8,7 +8,6 @@ export const Container = styled.div`
   height: 100vh;
   gap: 20px;
   font-family: 'Ubuntu';
-  background: url(${background}) no-repeat center center fixed;
   background-size: cover;
   padding: 20px;
 `;

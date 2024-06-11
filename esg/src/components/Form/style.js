@@ -21,9 +21,9 @@ export const Content = styled.div`
     flex-direction: column;
     gap: 2px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    background: rgba(60,179,113,0.8);
+    background: #F8F9FE;
     width: 100%;
-    max-width: 400px;
+    max-width: 600px;
     padding: 20px;
     border-radius: 20px;
     transition: all 0.3s ease;
@@ -36,7 +36,7 @@ export const Content = styled.div`
 export const Label = styled.label`
     font-size: 18px;
     font-weight: 600;
-    color: #555;
+    color: #1D4E59;
 `;
 
 export const Strong = styled.strong`
@@ -49,7 +49,7 @@ export const Strong = styled.strong`
         transition: color 0.3s ease;
 
         &:hover {
-            color: black;
+            color: red;
         }
     }
 `;

@@ -60,7 +60,7 @@ export const Strong = styled.strong`
         transition: color 0.3s ease;
 
         &:hover {
-            color: black;
+            
         }
     }
 `;
