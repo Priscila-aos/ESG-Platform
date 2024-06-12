@@ -8,10 +8,8 @@ Bem-vindo à documentação da Plataforma ESG (Environmental, Social, and Govern
 
 A Plataforma ESG é uma solução desenvolvida para auxiliar empresas na gestão de suas práticas ambientais, sociais e de governança. Através desta plataforma, as empresas podem monitorar, analisar e reportar suas iniciativas de ESG, promovendo transparência e responsabilidade corporativa.
 
-## Estrutura do Projeto
+### Outra parte do projeto
+O projeto também inclui uma parte **mobile**, a qual está disponível no repositório [EmbraceEsg-Mobile](https://github.com/ericaokamura/esg-ios)
 
-O projeto é dividido em três principais componentes:
-
-- **Back-end**: Responsável pelo processamento de dados, lógica de negócios e comunicação com o banco de dados.
-- **Front-end**: Interface de usuário para interação com a plataforma.
+ 
 
